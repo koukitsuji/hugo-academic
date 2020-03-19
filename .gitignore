@@ -10,3 +10,6 @@ exampleSite/public/
 
 # Node
 node_modules/
+
+# Others
+.DS_Store
