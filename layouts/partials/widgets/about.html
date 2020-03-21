@@ -59,7 +59,14 @@
         {{ end }}
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
-            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+            {{ if not (in .icon "qiita") }}
+              <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+            {{ else }}
+              <span class="fa-stack" style="color:#f96397">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-search fa-stack-1x fa-inverse fa-2x"></i>
+              </span>
+            {{ end }}
           </a>
         </li>
         {{ end }}
